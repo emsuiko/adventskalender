@@ -6,8 +6,15 @@ body
     flex-direction: column
     align-items: center
     padding-bottom: 2rem
-  h1
-    font-size: 3rem
+    h1
+      font-size: 3rem
+      text-align: center
+    #title
+      margin-bottom: 1rem
+
+.hide
+    display: none
+
 main
   margin: 0
   // position: relative
@@ -42,3 +49,6 @@ main
       background: transparent
       &:enabled:hover
         cursor: pointer
+      &.active
+        background-color: black
+        color: white

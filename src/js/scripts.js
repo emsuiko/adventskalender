@@ -1,5 +1,7 @@
 var days = (Array.from({length: 24}, (_, i) => i + 1)).sort((a, b) => 0.5 - Math.random())
 
+const chapter = []
+
 const calendar = document.getElementById('calendar');
 const player = document.getElementById('player');
 const today = new Date();
@@ -28,6 +30,9 @@ function doorClicked(number, event) {
   updatePlayer(number);
   document.getElementById('title').classList.remove('hide');
   document.getElementById('chapter').innerText = ' '+number;
+  document.getElementById('name').innerText = chapter[number-1];
+}
+
 for(let i = 0; i < 24; i++) {
   const door = document.createElement('button');
   const content = document.createTextNode(days[i]);
