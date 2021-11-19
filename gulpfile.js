@@ -181,4 +181,4 @@ gulp.task('default', gulp.series('clean', 'watch'), function() {
   log('Start build for ' + env);
 });
 
-gulp.task('build', gulp.series('templates', 'styles', 'img', 'js', 'audio'), () => {});
+gulp.task('build', gulp.series('clean', 'templates', 'styles', 'img', 'js', 'audio'), () => {});
