@@ -8,6 +8,26 @@ function isEnabled(number) {
   return (today.getMonth() == 10) && (today.getDate() >= number)
 }
 
+function deactiveAllDoors() {
+  const doors = document.getElementsByClassName('door');
+  for(var i = 0; i < doors.length; i++) {
+    doors[i].classList.remove('active');
+  }
+}
+
+function updatePlayer(number) {
+  player.pause();
+  player.setAttribute('src', 'audio/kapitel'+number+'.mp3');
+  player.load();
+  player.play();
+}
+
+function doorClicked(number, event) {
+  deactiveAllDoors();
+  event.srcElement.classList.add('active');
+  updatePlayer(number);
+  document.getElementById('title').classList.remove('hide');
+  document.getElementById('chapter').innerText = ' '+number;
 for(let i = 0; i < 24; i++) {
   const door = document.createElement('button');
   const content = document.createTextNode(days[i]);
@@ -17,11 +37,6 @@ for(let i = 0; i < 24; i++) {
   if(!isEnabled(days[i])) {
     door.setAttribute('disabled', true);
   }
-  door.addEventListener('click', event => {
-    player.pause();
-    player.setAttribute('src', '/audio/kapitel'+days[i]+'.mp3');
-    player.load();
-    player.play();
-  });
+  door.addEventListener('click', event => doorClicked(days[i], event));
   calendar.appendChild(door);
 }
