@@ -101,7 +101,7 @@ gulp.task('img', function() {
   return imagine(['src/img/**/*'], './dist/img');
 });
 
-gulp.task('img', function() {
+gulp.task('audio', function() {
   return gulp.src(['src/audio/**/*'])
     .pipe(gulp.dest('./dist/audio'));
 });
@@ -110,7 +110,7 @@ gulp.task('js', function() {
   return script('./dist/js');
 });
 
-gulp.task('watch', gulp.series(gulp.parallel('templates', 'styles', 'img', 'js'), function watch() {
+gulp.task('watch', gulp.series(gulp.parallel('templates', 'styles', 'img', 'js', 'audio'), function watch() {
   log('Start watching...');
 
   var pugwatcher = watcher(['src/pug/**/*.pug', '!src/pug/**/_*.pug'], { interval: 1000, usePolling: true });
@@ -181,4 +181,4 @@ gulp.task('default', gulp.series('clean', 'watch'), function() {
   log('Start build for ' + env);
 });
 
-gulp.task('build', gulp.series('templates', 'styles', 'img', 'js'), () => {});
+gulp.task('build', gulp.series('templates', 'styles', 'img', 'js', 'audio'), () => {});
