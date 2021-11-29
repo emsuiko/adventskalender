@@ -147,8 +147,7 @@ gulp.task('watch', gulp.series(gulp.parallel('templates', 'styles', 'img', 'js',
 
   var imgwatcher = watcher(['src/img/**/*.*'], { interval: 1000, usePolling: true });
   imgwatcher.on('add', function(path, stat) {
-    var dir = path.substr(3, path.lastIndexOf('/') - 3)
-    imagine(path, 'dist/img' + dir)
+    imagine(path, 'dist/img')
       .on('end', function() {
         log('...public re-imagined');
       });
