@@ -1,6 +1,8 @@
 body
   margin: 0
   font-family: Arial, Helvetica, sans-serif
+  background-repeat: no-repeat
+  background-size: cover
   header
     display: flex
     flex-direction: column
@@ -17,19 +19,6 @@ body
 
 main
   margin: 0
-  // position: relative
-  &::after
-    content: ""
-    background-image: url("../img/illu1.jpeg")
-    background-repeat: no-repeat
-    background-size: cover
-    opacity: 0.5
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    position: absolute
-    z-index: -1
   #calendar
     display: flex
     flex-wrap: wrap

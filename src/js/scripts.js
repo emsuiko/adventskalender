@@ -1,3 +1,9 @@
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max) + 1;
+}
+
+document.getElementsByTagName('body')[0].style.backgroundImage = "url('img/illu"+getRandomInt(7)+".png')";
+
 var days = (Array.from({length: 24}, (_, i) => i + 1)).sort((a, b) => 0.5 - Math.random())
 
 const chapter = []
