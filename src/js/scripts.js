@@ -25,7 +25,7 @@ function deactiveAllDoors() {
 
 function updatePlayer(number) {
   player.pause();
-  player.setAttribute('src', 'audio/kapitel'+number+'.mp3');
+  player.setAttribute('src', 'audio/Türchen '+number+'.mp3');
   player.load();
   player.play();
 }
