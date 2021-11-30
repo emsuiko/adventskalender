@@ -1,3 +1,10 @@
+import Plausible from 'plausible-tracker'
+
+const { trackPageview } = Plausible({
+  domain: 'anett.xyz'
+})
+trackPageview()
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max) + 1;
 }

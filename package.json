@@ -32,6 +32,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify-es": "^3.0.0",
     "minimist": "^1.2.5",
+    "plausible-tracker": "^0.3.4",
     "postcss": "^8.3.5",
     "sass": "^1.35.2",
     "vinyl-buffer": "^1.0.1",
