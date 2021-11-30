@@ -20,7 +20,7 @@ const player = document.getElementById('player');
 const today = new Date();
 
 function isEnabled(number) {
-  return (today.getMonth() == 10) && (today.getDate() >= number)
+  return (today.getMonth() == 11) && (today.getDate() >= number)
 }
 
 function deactiveAllDoors() {
