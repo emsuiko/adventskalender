@@ -19,6 +19,12 @@ const calendar = document.getElementById('calendar');
 const player = document.getElementById('player');
 const today = new Date();
 
+window.onload = function() {
+  if (player) {
+    player.setAttribute("controlsList", "nodownload");
+  }
+};
+
 function isEnabled(number) {
   return (today.getMonth() == 11) && (today.getDate() >= number)
 }
